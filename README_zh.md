@@ -1,6 +1,6 @@
 # CnCNet Client Yuri's Revenge Mod Base #
 
-本存储库包含一系列由[Rampastring](https://github.com/Rampastring)的 [CnCNet Client](https://github.com/CnCNet/xna-cncnet-client)修改的专用于命令与征服：尤里的复仇MOD尤其是使用了[Ares平台](https://ares.strategy-x.com/) _(not included in this repository or any of the releases)_.的客户端。
+本存储库包含一系列由[Rampastring](https://github.com/Rampastring)的 [CnCNet Client](https://github.com/CnCNet/xna-cncnet-client)修改的专用于命令与征服：尤里的复仇MOD（尤其是使用了[Ares平台](https://ares.strategy-x.com/)的MOD）的客户端。
 
 本存储库的内容可以被分成下列几个类别 (与文件夹相同):
 
@@ -20,7 +20,7 @@
 - [Rampastring](https://github.com/Rampastring) - 原版CnCNet 客户端 & 更新器, 例如 DTA 更新服务器脚本
 - [Starkku](https://github.com/Starkku) - 客户端代码贡献者, 拓展客户端更新功能, 版本文件生成器, 一些客户端图形资源, 客户端配置文件, 文档
 - [Kerbiter](https://github.com/Metadorius) - 客户端代码贡献者, 更新器文档草稿
-- [tomsons26](https://github.com/tomsons26) - CNCNET 尤里的复仇UI
+- [tomsons26](https://github.com/tomsons26) - CNCNet 尤里的复仇UI
 
 屏幕截图
 -------
