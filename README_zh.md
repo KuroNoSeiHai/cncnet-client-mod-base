@@ -11,8 +11,8 @@
 
 ## 文档导航
 
-- [快速使用指南](Documentation/QuickStartGuide.md)
-- [更新器文档](Documentation/Updater.md)
+- [快速使用指南](Documentation/QuickStartGuide_zh.md)
+- [更新器文档](Documentation/Updater_zh.md)
 
 制作人员
 -------
