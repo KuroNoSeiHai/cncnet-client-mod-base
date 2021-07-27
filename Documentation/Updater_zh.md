@@ -20,11 +20,11 @@
 -----------
 
 ## 快速指南
-1. Have a web server set up and create a publicly accessible directory from which to download your updates from.
-2. On your client configuration with support for extended updater, add URL of the aforementioned directory to list of available download mirrors in `Resources/UpdaterConfig.ini`. 
-3. Make changes to files and `VersionConfig.ini`.
-4. Run `VersionWriter.exe`.
-5. Upload the contents of the `VersionWriter_CopiedFiles` and [update server scripts](../Miscellaneous/UpdateServerScripts) to the aforementioned directory on the web server.
+1. 配置一个网络服务器并创建好一个可以被公开访问的目录（用于存放更新游戏所需的文件）。
+2. 在支持拓展个更新功能的客户端上配置好文件, 添加上面可用的下载镜像URL到 `Resources/UpdaterConfig.ini`。
+3. 制作好要变更的文件和和 `VersionConfig.ini`。
+4. 运行`VersionWriter.exe`。
+5. 将 `VersionWriter_CopiedFiles` 里的内容和[更新服务器脚本](../Miscellaneous/UpdateServerScripts)上传到上述的网络服务器目录。
 
 ## 详细说明
 To have automatic updates via XNA CnCNet client, an update server needs to be set up. The update server needs to be a web server with the files accessible through HTTP (**不是HTTPS**, 除非你想排除对Windows XP系统的支持), which would then allow them to be downloaded by client during the update process. The URL path to the file (sans update location part) has to replicate the local path to the file relative to mod folder in order to be succesfully downloaded (for example, with update location `http://your.test/location/of/updates/` the file `Resources/clientdx.exe` would need to be accessible at `http://your.test/location/of/updates/Resources/clientdx.exe` URL). Besides the update server scripts, the updater does not explicitly require any other files or specific software to exist or run on the update web server.
