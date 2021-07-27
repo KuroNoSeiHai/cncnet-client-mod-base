@@ -20,14 +20,14 @@
 -----------
 
 ## 快速指南
-1. 配置一个网络服务器并创建好一个可以被公开访问的目录（用于存放更新游戏所需的文件）。
+1. 配置一个 Web 服务器并创建好一个可以被公开访问的目录（用于存放更新游戏所需的文件）。
 2. 在支持拓展个更新功能的客户端上配置好文件, 添加上面可用的下载镜像URL到 `Resources/UpdaterConfig.ini`。
 3. 制作好要变更的文件和和 `VersionConfig.ini`。
 4. 运行`VersionWriter.exe`。
 5. 将 `VersionWriter_CopiedFiles` 里的内容和[更新服务器脚本](../Miscellaneous/UpdateServerScripts)上传到上述的网络服务器目录。
 
 ## 详细说明
-To have automatic updates via XNA CnCNet client, an update server needs to be set up. The update server needs to be a web server with the files accessible through HTTP (**不是HTTPS**, 除非你想排除对Windows XP系统的支持), which would then allow them to be downloaded by client during the update process. The URL path to the file (sans update location part) has to replicate the local path to the file relative to mod folder in order to be succesfully downloaded (for example, with update location `http://your.test/location/of/updates/` the file `Resources/clientdx.exe` would need to be accessible at `http://your.test/location/of/updates/Resources/clientdx.exe` URL). Besides the update server scripts, the updater does not explicitly require any other files or specific software to exist or run on the update web server.
+为了能通过 XNA CnCNet client 进行更新, 需要搭建一个更新服务器。这个更新服务器需要是一个能创建HTTP访问的公开目录的 Web 服务器(**不是HTTPS**, 除非你想排除对Windows XP系统的支持), 这样就能允许客户端在更新时从这个服务器下载更新所需的文件。The URL path to the file (sans update location part) has to replicate the local path to the file relative to mod folder in order to be succesfully downloaded (for example, with update location `http://your.test/location/of/updates/` the file `Resources/clientdx.exe` would need to be accessible at `http://your.test/location/of/updates/Resources/clientdx.exe` URL). Besides the update server scripts, the updater does not explicitly require any other files or specific software to exist or run on the update web server.
 
 To set up an update information needed to produce the files to upload on a server edit `VersionConfig.ini` file to include all of the redistributed files (or updated files only if you're saving on bandwidth and don't want to allow full downloads). Each time you need to push an update to your players (also if you change something in `VersionConfig.ini`) you have to change the version key under `[Version]` section in aforementioned configuration file so the CnCNet client prompts for an update. In case you need to force users to download an update manually you can change a key under `[UpdaterVersion]` section. After that run `VersionWriter.exe` and upload the contents of the `VersionWriter_CopiedFiles` to your update server along with updater scripts.
 
