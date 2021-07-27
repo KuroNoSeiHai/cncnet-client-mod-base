@@ -1,4 +1,4 @@
-# CnCNet Client Quick Start Guide #
+# CnCNet Client 快速使用指南 #
 
 A list of instructions to follow to perform a basic set-up of the CnCNet client for Ares-based C&C: Yuri's Revenge mod using the Mod Base.
 
