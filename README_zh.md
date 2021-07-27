@@ -2,19 +2,19 @@
 
 This repository contains a collection of files that can be used as a base to adapt [Rampastring's](https://github.com/Rampastring) [CnCNet Client](https://github.com/CnCNet/xna-cncnet-client) for use with Command & Conquer: Yuri's Revenge mods, particularly those also using [Ares DLL](https://ares.strategy-x.com/) _(not included in this repository or any of the releases)_.
 
-The contents of this repository can be broken down into the following categories (also separated into folders):
+本存储库的内容可以被分成下列几个类别 (与文件夹相同):
 
-- **[Client Files](ClientFiles)**: Contains compiled client binaries, an example client configuration & assets as well as all Command & Conquer: Yuri's Revenge maps (including the official map pack maps) and preview images generated for them. Source code for the client binaries included in this repository can be found [here](https://github.com/Starkku/xna-cncnet-client/tree/modified-updater).
+- **[Client Files](ClientFiles)**: 包含已编译的客户端, 客户端配置文件和资源文件的实例, 与命令与征服：尤里的复仇地图 (已包含官方地图包地图) 及其地图预览图. 本客户端的源码可以点击 [这里](https://github.com/Starkku/xna-cncnet-client/tree/modified-updater).获取。
 - **[Tools](Tools)**: Contains tool software that may be helpful for or required by the mod developers using the client. Currently this includes version file writer tool which is used for the client's updater feature.
 - **[Miscellaneous](Miscellaneous)**: Contains assorted files that are not additional software or part of the client configuration. Currently this includes update server script files used with the client's updater feature.
 - **[Documentation](Documentation)**: Contains documentation and guides for client features & configuration.
 
-## Documentation Index
+## 文档导航
 
 - [Quick Start Guide](Documentation/QuickStartGuide.md)
 - [Updater Documentation](Documentation/Updater.md)
 
-Credits
+制作人员
 -------
 
 - [Rampastring](https://github.com/Rampastring) - Original CnCNet Client & updater, example DTA update server scripts
