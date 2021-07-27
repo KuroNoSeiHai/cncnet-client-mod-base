@@ -44,7 +44,7 @@ The example `VersionConfig.ini` included with the version writer contains commen
 
 `VersionWriter.exe` accepts a single command-line argument that can be used to set its working directory - this allows running VersionWriter from outside the mod directory itself.
 
-#### Options
+#### 选项
 These are set under `[Options]` in `VersionConfig.ini`.
 - `EnableExtendedUpdaterFeatures`: If set, enables the extended updater features such as compressed archives, updater version and manual download URL.
 - `RecursiveDirectorySearch`: If set, will go through every subdirectory recursively for directories given in `[Include]`.
