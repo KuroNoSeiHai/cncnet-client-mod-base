@@ -22,6 +22,10 @@
 - [Kerbiter](https://github.com/Metadorius) - 客户端代码贡献者, 更新器文档草稿
 - [tomsons26](https://github.com/tomsons26) - CNCNet 尤里的复仇UI
 
+
+
+- [KuroNoSeiHai](https://github.com/KuroNoSeiHai) - 中文文档翻译
+
 屏幕截图
 -------
 ![主菜单截图](modbaseclient-mainmenu.png?raw=true "Main menu in example configuration.")
