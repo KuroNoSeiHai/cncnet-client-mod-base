@@ -27,11 +27,13 @@
 5. 将 `VersionWriter_CopiedFiles` 里的内容和[更新服务器脚本](../Miscellaneous/UpdateServerScripts)上传到上述的网络服务器目录。
 
 ## 详细说明
-为了能通过 XNA CnCNet client 进行更新, 需要搭建一个更新服务器。这个更新服务器需要是一个能创建HTTP访问的公开目录的 Web 服务器(**不是HTTPS**, 除非你想排除对Windows XP系统的支持), 这样就能允许客户端在更新时从这个服务器下载更新所需的文件。The URL path to the file (sans update location part) has to replicate the local path to the file relative to mod folder in order to be succesfully downloaded (for example, with update location `http://your.test/location/of/updates/` the file `Resources/clientdx.exe` would need to be accessible at `http://your.test/location/of/updates/Resources/clientdx.exe` URL). Besides the update server scripts, the updater does not explicitly require any other files or specific software to exist or run on the update web server.
+为了能通过 XNA CnCNet client 进行更新, 需要搭建一个更新服务器。这个更新服务器需要是一个能创建HTTP访问的公开目录的 Web 服务器(**不是HTTPS**, 除非你想排除对Windows XP系统的支持), 这样就能允许客户端在更新时从这个服务器下载更新所需的文件。文件的 URL 路径（无更新位置部分）必须复制相对于 mod 文件夹的文件的本地路径才能成功下载 (例如, 更新路径是 `http://your.test/location/of/updates/` 其中文件是 `Resources/clientdx.exe` 应该被设置成`http://your.test/location/of/updates/Resources/clientdx.exe` URL)。除了更新服务器脚本之外，更新程序不要求在更新 Web 服务器上存在或运行任何其他文件或特定软件。
 
-To set up an update information needed to produce the files to upload on a server edit `VersionConfig.ini` file to include all of the redistributed files (or updated files only if you're saving on bandwidth and don't want to allow full downloads). Each time you need to push an update to your players (also if you change something in `VersionConfig.ini`) you have to change the version key under `[Version]` section in aforementioned configuration file so the CnCNet client prompts for an update. In case you need to force users to download an update manually you can change a key under `[UpdaterVersion]` section. After that run `VersionWriter.exe` and upload the contents of the `VersionWriter_CopiedFiles` to your update server along with updater scripts.
+要生成要上传到服务器上的文件所需的更新信息，请编辑“VersionConfig.ini”文件以包含所有重新分发的文件（或仅当您节省带宽并且不想允许完整 下载）。 每次您需要向播放器推送更新时（如果您在 `VersionConfig.ini` 中更改某些内容），您必须更改上述配置文件中 `[Version]` 部分下的版本密钥， . 如果您需要强制用户手动下载更新，您可以更改“[UpdaterVersion]”部分下的密钥。 之后运行“VersionWriter.exe”并将“VersionWriter_CopiedFiles”的内容与更新程序脚本一起上传到您的更新服务器。
 
-Refer below for a more comprehensive explanation of both version writer's and updater's features & configuration files.
+要生成要上传到服务器上的文件所需的更新信息, 需要编辑 `VersionConfig.ini` 文件以包含所有重新分发的文件 (或仅当您节省带宽并且不想允许完整下载)。每次您需要向您的玩家推送更新时(包括您想在 `VersionConfig.ini` 更改某些内容时) 您必须更改上述配置文件中 `[Version]` 部分下的版本密钥以便 CnCNet 客户端提示更新。如果您需要强制用户手动下载更新, 您可以更改节 `[UpdaterVersion]` 部分下的密钥。然后再运行 `VersionWriter.exe` 并上传 `VersionWriter_CopiedFiles` 里的内容和更新服务器脚本。
+
+有关版本文件生成器和更新器的功能和配置文件的更全面说明，请参阅下文。
 
 
 功能
