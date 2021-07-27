@@ -40,25 +40,24 @@
 -------
 
 ### 版本文件生成器
-The example `VersionConfig.ini` included with the version writer contains comments explaining most of the functionality and features.
+版本文件生成器中包含的示例 `VersionConfig.ini` 包含解释大部分功能和特性的注释。
 
-`VersionWriter.exe` accepts a single command-line argument that can be used to set its working directory - this allows running VersionWriter from outside the mod directory itself.
+`VersionWriter.exe` 允许使用单个命令行参数设置其工作目录 - 这允许从 mod 目录本身之外运行版本文件生成器。
 
 #### 选项
-These are set under `[Options]` in `VersionConfig.ini`.
-- `EnableExtendedUpdaterFeatures`: If set, enables the extended updater features such as compressed archives, updater version and manual download URL.
-- `RecursiveDirectorySearch`: If set, will go through every subdirectory recursively for directories given in `[Include]`.
-; If set, will always create two version files - one with everything included (version_base) and the proper, actual version file with only changed files (version). 
-; version_base should be kept around as it is used to compare which files have been changed next time VersionWriter is ran.
-- `IncludeOnlyChangedFiles`: If set, version file writer will always create two version files - one with everything included (`version_base`) and the proper, actual version file with only changed files (`version`). Note that `version_base` should be kept around as it is used to compare which files have been changed next time version file writer is ran.
-- `CopyArchivedOriginalFiles`: If set, original versions of archived files will also be copied to copied files directory.
+这些选项在 `VersionConfig.ini` 文件下的 `[Options]` 进行设置。
+- `EnableExtendedUpdaterFeatures`: 如果设置，则启用扩展更新程序功能，例如压缩档案、更新版本和手动下载 URL。
+- `RecursiveDirectorySearch`: 如果设置，将递归遍历每个`[Include]` 中给出的子目录。
+- `IncludeOnlyChangedFiles`: 如果设置，将始终创建两个版本文件 - 一个包含所有内容(`version_base`)和正确的版本文件，实际的版本文件将仅用来更改文件(`version`)。
+注意version_base 应该保留，因为可以用于比较下次运行 VersionWriter 时哪些文件已更改。
+- `CopyArchivedOriginalFiles`: 如果设置，档案文件的原始版本也将复制到复制文件目录。
 
 #### 更新器版本 & 手动下载地址
 Setting `[UpdaterVersion]` in `VersionConfig.ini` writes this information to the `version` file and allows developers to control which versions are allowed to download files from the version info through the client. Mismatching updater versions between local and server version files will suggest users to download update manually through updater status message. Absent or malformed updater version (both local & server) is equivalent to `N/A` and updater will bypass the mismatch check entirely if server  updater version is set to this or absent.
 
 Additionally setting `[ManualDownloadURL]` will, in addition to displaying the updater status message, also bring up a notification dialog with the provided URL as a download link in case a updater version mismatch occurs.
 
-#### 压缩文件
+#### 压缩档案
 The extended updater supports downloading and uncompressing LZMA-compressed data archives. Files that are to be compressed should be included under `[ArchiveFiles]` in `VersionConfig.ini`. Note that they still need to be included through `[Include]` in the first place. As a result there would be information in the `version` file which allows the client, assuming the modified updater is in use, to figure out it is supposed to download the archive instead, and instead of the original files the compressed files with `.lzma` extension are placed to the `VersionWriter_CopiedFiles` folder.
 
 #### 自定义组件
@@ -71,7 +70,7 @@ The example `Resources/UpdaterConfig.ini` included with client files contains co
 
 Only currently supported global updater setting under `[Settings]` is `IgnoreMasks` that allows customizing the list filenames that are exempted from file integrity checks even if they are included in `version` file.
 
-#### Download Mirrors
+#### 下载镜像
 
 List of available download mirrors from which to download version info and files from. Listed as comma-separated values under `[DownloadMirrors]`, containing URL, UI display name and location. Location is optional and can be omitted.
 
