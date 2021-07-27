@@ -3,9 +3,9 @@
 以下是本客户端的使用说明。
 
 1. 编辑 `Resources\GameCollectionConfig.ini`:
-   1. Change `InternalName` under section `CustomGame` to your chosen, unique abbreviation (max. 4 characters in length).
-   2. Change `UIName` under section `CustomGame` to full name of your mod.
-   3. Set `ChatChannel` and `GameBroadcastChannel` under section `CustomGame` to valid IRC channel names. For an example, `#cncnet-X` for `ChatChannel` and `#cncnet-X-games` for `GameBroadcastChannel`, where `X` is replaced by the abbreviation from `InternalName`.
+   1. 将字段 `CustomGame`下的 `InternalName`  改成你MOD的简称(不要超过4个字符)。
+   2. 将字段 `CustomGame` 下的 `UIName` 改成你MOD的全称。
+   3. 将字段 `CustomGame` 下的 `ChatChannel` 和 `GameBroadcastChannel`改成有效的 IRC 渠道名称. 例如, `ChatChannel`改成`#cncnet-X`  和 `GameBroadcastChannel`改成`#cncnet-X-games` , 这里请将 `X` 换成你对应的 `InternalName`.
       - **NOTE:** If you wish to register and moderate the channels yourself, you can't use the `cncnet` name in the channel names. In that case, it is recommended to use the full name of the mod instead, f.ex `#customgame` / `#customgame-games`.
    4. Set `IconFilename` under section `CustomGame` to a valid filename of a 16x16px icon to display in CnCNet lobby & CnCNet options. The file (ideally in PNG format) should be placed in `Resources` directory.
 2. 编辑 `Resources\ClientDefinitions.ini`:
