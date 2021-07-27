@@ -1,5 +1,7 @@
 # CnCNet Client Yuri's Revenge Mod Base #
 
+[中文版本](README_zh.md)
+
 This repository contains a collection of files that can be used as a base to adapt [Rampastring's](https://github.com/Rampastring) [CnCNet Client](https://github.com/CnCNet/xna-cncnet-client) for use with Command & Conquer: Yuri's Revenge mods, particularly those also using [Ares DLL](https://ares.strategy-x.com/) _(not included in this repository or any of the releases)_.
 
 The contents of this repository can be broken down into the following categories (also separated into folders):
