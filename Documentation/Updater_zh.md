@@ -53,37 +53,36 @@
 - `CopyArchivedOriginalFiles`: 如果设置，档案文件的原始版本也将复制到复制文件目录。
 
 #### 更新器版本 & 手动下载地址
-Setting `[UpdaterVersion]` in `VersionConfig.ini` writes this information to the `version` file and allows developers to control which versions are allowed to download files from the version info through the client. Mismatching updater versions between local and server version files will suggest users to download update manually through updater status message. Absent or malformed updater version (both local & server) is equivalent to `N/A` and updater will bypass the mismatch check entirely if server  updater version is set to this or absent.
+在 `VersionConfig.ini` 中设置 `[UpdaterVersion]` 会将信息写入 `version` 文件并允许开发人员通过客户端版本信息来控制允许从下载文件的版本。本地和服务器版本文件的更新程序版本不匹配时, 将通过更新程序通知对话框建议用户手动下载更新。不存在或格式错误的更新程序版本（本地和服务器）等效于 `N/A` ，如果服务器更新程序版本设置为此或不存在，更新程序将完全绕过不匹配检查。
 
-Additionally setting `[ManualDownloadURL]` will, in addition to displaying the updater status message, also bring up a notification dialog with the provided URL as a download link in case a updater version mismatch occurs.
+此外，设置 `[ManualDownloadURL]` , 除了显示更新程序状态消息外，还会显示一个通知对话框，其中提供的 URL 作为下载链接，以防更新程序版本不匹配。
 
 #### 压缩档案
-The extended updater supports downloading and uncompressing LZMA-compressed data archives. Files that are to be compressed should be included under `[ArchiveFiles]` in `VersionConfig.ini`. Note that they still need to be included through `[Include]` in the first place. As a result there would be information in the `version` file which allows the client, assuming the modified updater is in use, to figure out it is supposed to download the archive instead, and instead of the original files the compressed files with `.lzma` extension are placed to the `VersionWriter_CopiedFiles` folder.
+扩展更新程序支持下载和解压 LZMA 压缩的数据档案。要压缩的文件应包含在 `VersionConfig.ini` 中的 `[ArchiveFiles]` 下。注意, 它们仍然需要在最先通过 `[Include]` 包含。因此, `version` 文件中会包含信息（假设你使用了此更新器）, 用于允许客户端确定它应该下载档案文件，而不是位于 `VersionWriter_CopiedFiles` 文件夹的 `.lzma` 拓展名原始文件。
 
 #### 自定义组件
-Custom components are available even with the original XNA CnCnet Client, but since the IDs and filenames are hardcoded in the updater, their usage is limited. Custom component info for the updater can be set in `Resources/UpdaterConfig.ini`, see below for more info. For version file writer, any custom components should be included under `[AddOns]`, using syntax `ID=filename` as shown in the example `VersionConfig.ini`. Custom component filenames **should not** be listed under `[Include]`. The filenames can be listed under `[ArchiveFiles]` to enable use of compressed archives.
+即使使用原始的 XNA CnCnet 客户端也可以使用自定义组件，但由于 ID 和文件名在更新器中是硬编码的，因此它们的使用受到限制。更新器的自定义组件信息可以在 `Resources/UpdaterConfig.ini` 中进行设置, 更多信息见下文。对于版本文件生成器, 任何自定义组件都应被包含在 `[AddOns]` 中, 使用语法为 `ID=filename` 如在 `VersionConfig.ini` 中示例所示。自定义组件的文件名 **不应** be 被列于 `[Include]` 下。但可以被列于 `[ArchiveFiles]` 下以使用压缩档案。
 
-- Custom component download file path (in `Resources/UpdaterConfig.ini`) accepts absolute URLs and uses them properly, so it's possible to define custom components which have to be downloaded from elsewhere.
+- 自定义组件下载文件路径 (位于 `Resources/UpdaterConfig.ini`) 接受绝对 URL 并正确使用它们，因此可以定义必须从其他地方下载的自定义组件。
 
 ### 更新器配置
-The example `Resources/UpdaterConfig.ini` included with client files contains comments explaining most of the functionality and features.
+版本文件生成器中包含的示例 `VersionConfig.ini` 包含解释大部分功能和特性的注释。
 
-Only currently supported global updater setting under `[Settings]` is `IgnoreMasks` that allows customizing the list filenames that are exempted from file integrity checks even if they are included in `version` file.
+当前仅在 `[Settings]` 下支持的全局更新程序设置是 `IgnoreMasks` 的情况下, 它允许自定义从文件完整性检查中免除的列表文件名, 即使它们包含在 `version` 文件中。
 
 #### 下载镜像
+版本信息和文件的可用下载镜像列表。 在 `[DownloadMirrors]` 下以逗号分隔值列出，包含 URL、UI 显示名称和位置。 位置是可选的，可以省略。
 
-List of available download mirrors from which to download version info and files from. Listed as comma-separated values under `[DownloadMirrors]`, containing URL, UI display name and location. Location is optional and can be omitted.
-
-Omitting the download mirrors list will default to the hardcoded list for currently set mod / game if available. Updater and Updater & Component options in client options will be unavailable if no download mirrors are found.
+省略下载镜像列表将默认为当前设置的模组/游戏的硬编码列表（如果可用的话）。如果找不到下载镜像，客户端选项中的更新和组件选项将不可用。
 
 #### 自定义组件
-List of custom components available for the updater. Listed as comma-separated values under `[CustomComponents]`, containing custom component ID used in the `version` file, download path / URL, local filename, flag that disables archive file extensions for download path / URL.
+可用于更新程序的自定义组件列表。 在 `[CustomComponents]` 下以逗号分隔值列出，包含在 `version` 文件中使用的自定义组件 ID、下载路径/URL、本地文件名、禁用下载路径/URL 的存档文件扩展名的标志。
 
-Download path / URL supports absolute URLs, allowing custom components to be downloaded from location outside the current update server but also restricts it to one download location instead of one per each download mirror.
+下载路径/URL 支持绝对 URL，允许从当前更新服务器之外的位置下载自定义组件，但也将其限制为一个下载位置，而不是每个下载镜像一个。
 
-Download path archive file extension disable flag is a boolean value (yes/no, true/false), is optional and defaults to false.
+下载路径存档文件扩展名禁用标志是一个可选的布尔值 (yes/no, true/false), 默认值是 false。
 
-Omitting the custom components list will default to the hardcoded list for currently set mod / game if available. Custom components and the Components tab in client options will be unavailable if no custom component info is found.
+省略自定义组件列表将默认为当前设置的模组/游戏的硬编码列表（如果可用的话）。 如果未找到自定义组件信息，则自定义组件和客户端选项中的组件选项卡将不可用。 
 
 
 支持的客户端
@@ -92,5 +91,7 @@ Omitting the custom components list will default to the hardcoded list for curre
 推荐使用以下几种客户端来使用此拓展更新功能:
 - 包含此功能的客户端存储库 - 源代码可以查看 [这里](https://github.com/Starkku/xna-cncnet-client/tree/modified-updater)
 - [Kerbiter的自定义客户端](https://github.com/Metadorius/xna-cncnet-client)
+- [译者本地化的中文Starkku客户端（目前未完成请暂时使用上面两个）](https://github.com/KuroNoSeiHai/xna-cncnet-client/tree/modified-updater)
 
-The extended updater library (`DTAUpdater.dll`) should theoretically be backwards compatible with all modern XNA CnCNet client variants, though not all of the extended updater features will be available. Not using it with a corresponding client version is generally speaking advised against and not really supported in any real capacity.
+扩展更新程序库（`DTAUpdater.dll`）理论上应该与所有现行的 XNA CnCNet 客户端变体向后兼容，尽管并非所有扩展更新程序功能都可用。不过不建议将它与不相应的客户端版本一起使用，因为没有实际被支持。
+
