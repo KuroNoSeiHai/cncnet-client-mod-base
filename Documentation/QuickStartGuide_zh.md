@@ -20,4 +20,4 @@
    3. 如果你想变更游戏内颜色, 或者想通过 Ares 添加新的玩家颜色, 请按找你的颜色设置来修改节 `MPColors` 下的内容。
 4. 编辑 `Resources\FHCConfig.ini`:
    1. 调整节 `FilenameList` 下的文件名列表, 此文件名列表用于比对玩家之间的文件以此来检测作弊。 这个列表也可以检测比如放在 `expandmd99.mix` 里的所有 INI files 和 `shroud.shp`等。即使是你从 `FilenameList`设置了排除, 客户端本身的文件例如 `FHCConfig.ini` 仍然会被检测。
-   2. *可选:* 节 `Settings` 下的`CalculateGameExeHash` 可以被设置成 `true` 以此来保证游戏主程序 (`gamemd.exe`) 在玩家之间是相同的。 大多数尤里的复仇mod, 游戏文件是不会包含在mod文件的, 不会出现这个问题。
+   2. *可选:* 节 `Settings` 下的`CalculateGameExeHash` 可以被设置成 `true` 以此来保证游戏主程序 (`gamemd.exe`) 在玩家之间是相同的。 大多数尤里的复仇mod, 游戏文件是不会包含在mod文件中的, 不会出现这个问题。
