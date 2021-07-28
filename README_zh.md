@@ -4,7 +4,7 @@
 
 本存储库的内容可以被分成下列几个类别 (与文件夹相同):
 
-- **[Client Files(客户端文件)](ClientFiles)**: 包含已编译的客户端, 客户端配置文件和资源文件的实例, 与命令与征服：尤里的复仇地图 (已包含官方地图包地图) 及其地图预览图. 本客户端的源码可以点击 [这里](https://github.com/Starkku/xna-cncnet-client/tree/modified-updater)获取。
+- **[Client Files(客户端文件)](ClientFiles)**: 包含已编译的客户端, 客户端配置文件和资源文件的示例, 与命令与征服：尤里的复仇地图 (已包含官方地图包地图) 及其地图预览图. 本客户端的源码可以点击 [这里](https://github.com/Starkku/xna-cncnet-client/tree/modified-updater)获取。
 - **[Tools(工具)](Tools)**: 包含对想要使用此客户端的MOD开发者使用的实用工具软件。目前包含客户端更新功能所需要的【版本文件生成器】。
 - **[Miscellaneous(杂项)](Miscellaneous)**: 包含不属于软件或客户端配置文件类别的配套使用文件。目前包含客户端额更新功能所需要的【更新服务器脚本】。
 - **[Documentation(文档)](Documentation)**: 包含使用本客户端需要阅读的说明文档及指南。
